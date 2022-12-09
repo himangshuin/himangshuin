@@ -43,13 +43,6 @@
 <div align="left" style={><p><img align="left" src="http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=himangshuin&theme=github" alt="ghosling" /></p></div>
 <div align="center" style={><p><img align="center" src="http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=himangshuin&theme=github" alt="ghosling" /></p></div>
 
-&nbsp;
-
-### 📈 Activity Graph     
-<img src="https://activity-graph.herokuapp.com/graph?username=himangshuin&theme=dracula&layout=compact&title_color=FF69B4&hide_border=true&area=true" height="300" width="auto"></img>
-</div>
-
-&nbsp;
 
 ### 💳 Github Profile Summary Card
 
