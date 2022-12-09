@@ -2,10 +2,10 @@
          alt="Waving hand animated gif"
          height="42"
          width="42" />,I'm Himangshu Kalita</h1>
-<h3 align="center">A Frontend-End Web Developer from India</h3>
+<h3 align="center">A Blogger & SEO guy from India</h3>
 
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=himangskalita&label=Views&color=blue&style=plastic&style=for-the-badge" alt="profile-views" /> </p>
+<p align="left"> <img src="[https://komarev.com/ghpvc/?username=himangshuin&label=Views&color=blue&style=plastic&style=for-the-badge](https://komarev.com/ghpvc/?username=himangshuin&label=Views&color=blue&style=plastic&style=for-the-badge)" alt="profile-views" /> </p>
 
 ## 💫 About Me:
 - 🔭 I’m currently building Frontier.
