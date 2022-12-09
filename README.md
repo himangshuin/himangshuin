@@ -57,11 +57,6 @@
 
 &nbsp;
 
-### 💻 Github Contributions live
-<p align="left">
-  <img src="https://github.com/himangshuin/himangshu/raw/output/github-contribution-grid-snake.svg" alt="snake"></center>
-</p>
-
 &nbsp;
 
 ### ✍️ Random Dev Quote
