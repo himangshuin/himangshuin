@@ -1,7 +1,7 @@
 <h1 align="center">Hi <img src="https://raw.githubusercontent.com/nixin72/nixin72/master/wave.gif" 
          alt="Waving hand animated gif"
-         height="45"
-         width="45" />, I'm Himangshu Kalita</h1>
+         height="42"
+         width="42" />,I'm Himangshu Kalita</h1>
 <h3 align="center">A Frontend-End Web Developer from India</h3>
 
 
