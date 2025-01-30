@@ -3,20 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Himangshu Kalita | SEO & WordPress Expert</title>
+    <title>John Doe | SEO & WordPress Expert</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Custom CSS */
+        :root {
+            --primary: #2c3e50;
+            --secondary: #27ae60;
+            --accent: #3498db;
+            --light: #f9f9f9;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', sans-serif;
         }
 
         body {
-            line-height: 1.6;
-            color: #333;
+            line-height: 1.7;
+            color: var(--primary);
+            background: var(--light);
         }
 
         .container {
@@ -29,7 +36,7 @@
         nav {
             background: #fff;
             padding: 1rem 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
             position: fixed;
             width: 100%;
             top: 0;
@@ -43,47 +50,64 @@
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #2c3e50;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 1px;
         }
 
         .nav-links a {
-            margin-left: 2rem;
+            margin-left: 2.5rem;
             text-decoration: none;
-            color: #2c3e50;
+            color: var(--primary);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(44,62,80,0.9), rgba(44,62,80,0.9)),
+            background: linear-gradient(135deg, rgba(44,62,80,0.95) 0%, rgba(52,73,94,0.95) 100%),
                         url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5') center/cover;
             height: 100vh;
             display: flex;
             align-items: center;
             text-align: center;
             color: #fff;
-            padding-top: 60px;
+            padding-top: 80px;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
+            font-size: 3.8rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero .subheading {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
         }
 
         .cta-button {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background: #27ae60;
+            display: inline-flex;
+            align-items: center;
+            padding: 1.2rem 2.5rem;
+            background: var(--secondary);
             color: #fff;
             text-decoration: none;
-            border-radius: 5px;
-            margin-top: 2rem;
-            transition: transform 0.3s;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(39,174,96,0.3);
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(39,174,96,0.4);
         }
 
         /* Stats Section */
@@ -91,125 +115,174 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
-            padding: 4rem 0;
-            background: #f9f9f9;
+            padding: 5rem 0;
         }
 
         .stat-box {
             text-align: center;
-            padding: 2rem;
+            padding: 2.5rem;
             background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-10px);
         }
 
         .stat-box h3 {
-            font-size: 2.5rem;
-            color: #27ae60;
+            font-size: 2.8rem;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
         }
 
         /* Pricing Section */
         .pricing {
-            padding: 4rem 0;
-            background: #f9f9f9;
+            padding: 6rem 0;
+            background: #fff;
         }
 
-        .pricing h2 {
+        .section-title {
             text-align: center;
-            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
         }
 
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 3rem;
         }
 
         .pricing-card {
             background: #fff;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            text-align: center;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transition: transform 0.3s;
+            border: 2px solid transparent;
         }
 
         .pricing-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            border-color: var(--secondary);
         }
 
         .pricing-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
         }
 
-        .pricing-card .price {
-            font-size: 2.5rem;
-            color: #27ae60;
-            margin-bottom: 1rem;
+        .price {
+            font-size: 2.8rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
         }
 
-        .pricing-card ul {
+        .price span {
+            font-size: 1.2rem;
+            color: #666;
+            font-weight: normal;
+        }
+
+        .pricing-features {
             list-style: none;
+            margin-bottom: 2.5rem;
+        }
+
+        .pricing-features li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-features li i {
+            color: var(--secondary);
+            margin-right: 0.8rem;
+        }
+
+        /* Service Order Form */
+        .order-section {
+            padding: 6rem 0;
+            background: var(--light);
+        }
+
+        .order-form {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+
+        .form-group {
             margin-bottom: 2rem;
         }
 
-        .pricing-card ul li {
-            margin-bottom: 0.5rem;
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            color: var(--primary);
         }
 
-        .pricing-card .cta-button {
-            background: #2c3e50;
-            color: #fff;
-            padding: 0.8rem 1.5rem;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background 0.3s;
-        }
-
-        .pricing-card .cta-button:hover {
-            background: #27ae60;
-        }
-
-        /* Call-to-Action Section */
-        .cta-section {
-            background: #2c3e50;
-            color: #fff;
-            padding: 4rem 0;
-            text-align: center;
-        }
-
-        .cta-section h2 {
-            margin-bottom: 1rem;
-        }
-
-        .cta-section p {
+        .service-selector {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
             margin-bottom: 2rem;
         }
 
-        /* Floating WhatsApp Button */
-        .whatsapp-button {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #25D366;
-            color: #fff;
-            padding: 1rem;
-            border-radius: 50%;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-            z-index: 1000;
+        .service-option {
+            padding: 1.5rem;
+            border: 2px solid #eee;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
         }
 
-        .email-button {
-            position: fixed;
-            bottom: 100px;
-            right: 30px;
-            background: #EA4335;
-            color: #fff;
-            padding: 1rem;
+        .service-option.selected {
+            border-color: var(--secondary);
+            background: rgba(39,174,96,0.05);
+        }
+
+        .service-option input {
+            display: none;
+        }
+
+        .budget-range {
+            width: 100%;
+            height: 8px;
+            background: #eee;
+            border-radius: 4px;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .budget-range::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            background: var(--secondary);
             border-radius: 50%;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-            z-index: 1000;
+            cursor: pointer;
+        }
+
+        .timeline-select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            font-size: 1rem;
         }
 
         /* Responsive Design */
@@ -225,6 +298,10 @@
             .stats {
                 grid-template-columns: 1fr;
             }
+
+            .order-form {
+                padding: 2rem;
+            }
         }
     </style>
 </head>
@@ -236,7 +313,7 @@
             <div class="nav-links">
                 <a href="#services">Services</a>
                 <a href="#pricing">Pricing</a>
-                <a href="#contact">Contact</a>
+                <a href="#order">Order</a>
             </div>
         </div>
     </nav>
@@ -244,23 +321,23 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Boost Your Online Visibility & Revenue</h1>
-            <p class="subheading">8+ Years of Expert SEO & WordPress Design</p>
-            <a href="#contact" class="cta-button">Get Your Free Audit</a>
+            <h1>Transform Your Digital Presence</h1>
+            <p class="subheading">8+ Years Experience in SEO & WordPress Excellence</p>
+            <a href="#order" class="cta-button">Start Your Project Now</a>
             
             <!-- Stats Grid -->
-            <div class="stats" style="margin-top: 4rem;">
+            <div class="stats">
                 <div class="stat-box">
                     <h3>300%+</h3>
-                    <p>Avg. Traffic Growth</p>
+                    <p>Average Traffic Growth</p>
                 </div>
                 <div class="stat-box">
                     <h3>50+</h3>
-                    <p>Websites Built</p>
+                    <p>Websites Launched</p>
                 </div>
                 <div class="stat-box">
                     <h3>95%</h3>
-                    <p>Client Retention</p>
+                    <p>Client Satisfaction</p>
                 </div>
             </div>
         </div>
@@ -269,77 +346,140 @@
     <!-- Pricing Section -->
     <section id="pricing" class="pricing">
         <div class="container">
-            <h2>Pricing Plans</h2>
+            <h2 class="section-title">Service Packages</h2>
             <div class="pricing-grid">
-                <!-- SEO Pricing Card -->
                 <div class="pricing-card">
-                    <h3>SEO Starter</h3>
-                    <div class="price">$800<span>/month</span></div>
-                    <ul>
-                        <li>Keyword Research</li>
-                        <li>On-Page SEO</li>
-                        <li>Monthly Reporting</li>
-                        <li>5 Backlinks/Month</li>
+                    <h3>SEO Optimization</h3>
+                    <div class="price">$799<span>/month</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i>Keyword Research</li>
+                        <li><i class="fas fa-check"></i>Technical SEO Audit</li>
+                        <li><i class="fas fa-check"></i>Content Strategy</li>
+                        <li><i class="fas fa-check"></i>Monthly Reporting</li>
                     </ul>
-                    <a href="#contact" class="cta-button">Get Started</a>
+                    <a href="#order" class="cta-button">Select Plan</a>
                 </div>
 
-                <!-- WordPress Pricing Card -->
                 <div class="pricing-card">
-                    <h3>WordPress Design</h3>
-                    <div class="price">$2,500<span>/project</span></div>
-                    <ul>
-                        <li>Custom Theme Design</li>
-                        <li>Responsive Layout</li>
-                        <li>SEO Optimization</li>
-                        <li>1 Month Support</li>
+                    <h3>WordPress Pro</h3>
+                    <div class="price">$2,499<span>/project</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i>Custom Theme Design</li>
+                        <li><i class="fas fa-check"></i>WooCommerce Setup</li>
+                        <li><i class="fas fa-check"></i>Speed Optimization</li>
+                        <li><i class="fas fa-check"></i>1 Month Support</li>
                     </ul>
-                    <a href="#contact" class="cta-button">Get Started</a>
+                    <a href="#order" class="cta-button">Select Plan</a>
                 </div>
 
-                <!-- Combined Pricing Card -->
                 <div class="pricing-card">
-                    <h3>SEO + WordPress</h3>
-                    <div class="price">$3,000<span>/project</span></div>
-                    <ul>
-                        <li>Custom WordPress Site</li>
-                        <li>Full SEO Setup</li>
-                        <li>3 Months Support</li>
-                        <li>10 Backlinks</li>
+                    <h3>Full Package</h3>
+                    <div class="price">$3,299<span>/project</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i>Website + SEO</li>
+                        <li><i class="fas fa-check"></i>Premium Plugins</li>
+                        <li><i class="fas fa-check"></i>3 Months Support</li>
+                        <li><i class="fas fa-check"></i>Priority Service</li>
                     </ul>
-                    <a href="#contact" class="cta-button">Get Started</a>
+                    <a href="#order" class="cta-button">Select Plan</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Call-to-Action Section -->
-    <section id="contact" class="cta-section">
+    <!-- Service Order Section -->
+    <section id="order" class="order-section">
         <div class="container">
-            <h2>Ready to Grow Your Business?</h2>
-            <p>Let’s discuss your project and how I can help you achieve your goals.</p>
-            <a href="https://wa.me/1234567890" class="cta-button" target="_blank">Chat on WhatsApp</a>
-            <a href="mailto:your@email.com" class="cta-button">Email Me</a>
+            <div class="order-form">
+                <h2 class="section-title">Custom Order Request</h2>
+                <form id="serviceOrderForm">
+                    <!-- Service Selection -->
+                    <div class="form-group">
+                        <label>Select Services</label>
+                        <div class="service-selector">
+                            <div class="service-option" onclick="toggleService(this)">
+                                <input type="checkbox" name="service" value="seo">
+                                <h4>SEO Services</h4>
+                                <p>Complete search engine optimization</p>
+                            </div>
+                            <div class="service-option" onclick="toggleService(this)">
+                                <input type="checkbox" name="service" value="wordpress">
+                                <h4>WordPress Design</h4>
+                                <p>Custom website development</p>
+                            </div>
+                            <div class="service-option" onclick="toggleService(this)">
+                                <input type="checkbox" name="service" value="maintenance">
+                                <h4>Ongoing Support</h4>
+                                <p>Monthly maintenance & updates</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Details -->
+                    <div class="form-group">
+                        <label>Project Description</label>
+                        <textarea rows="5" placeholder="Describe your project..." required></textarea>
+                    </div>
+
+                    <!-- Budget Range -->
+                    <div class="form-group">
+                        <label>Estimated Budget</label>
+                        <select class="timeline-select">
+                            <option>$1,000 - $3,000</option>
+                            <option>$3,000 - $5,000</option>
+                            <option>$5,000+</option>
+                        </select>
+                    </div>
+
+                    <!-- Timeline -->
+                    <div class="form-group">
+                        <label>Project Timeline</label>
+                        <select class="timeline-select">
+                            <option>1-2 Weeks</option>
+                            <option>2-4 Weeks</option>
+                            <option>1-3 Months</option>
+                        </select>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="form-group">
+                        <label>Your Contact Information</label>
+                        <input type="email" placeholder="Email address" required>
+                        <input type="tel" placeholder="Phone number (optional)">
+                    </div>
+
+                    <button type="submit" class="cta-button">Submit Request</button>
+                </form>
+            </div>
         </div>
     </section>
 
-    <!-- Floating Contact Buttons -->
-    <a href="https://wa.me/1234567890" class="whatsapp-button" target="_blank">
-        <i class="fab fa-whatsapp fa-2x"></i>
-    </a>
-    
-    <a href="mailto:your@email.com" class="email-button">
-        <i class="fas fa-envelope fa-2x"></i>
-    </a>
-
     <script>
-        // Smooth scroll for navigation links
+        // Service Selection Toggle
+        function toggleService(element) {
+            element.classList.toggle('selected');
+            const checkbox = element.querySelector('input');
+            checkbox.checked = !checkbox.checked;
+        }
+
+        // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
+            });
+        });
+
+        // Form Submission
+        document.getElementById('serviceOrderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Add your form submission logic here
+            alert('Thank you! Your request has been submitted. I will contact you within 24 hours.');
+            this.reset();
+            document.querySelectorAll('.service-option').forEach(opt => {
+                opt.classList.remove('selected');
             });
         });
     </script>
