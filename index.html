@@ -1,487 +1,814 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John Doe | SEO & WordPress Expert</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #2c3e50;
-            --secondary: #27ae60;
-            --accent: #3498db;
-            --light: #f9f9f9;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', sans-serif;
-        }
+  <!-- SEO Meta Tags -->
+  <title>Himangshu | Travel Storyteller · Assam Vlogger · Content Creator</title>
+  <meta name="description" content="Himangshu – Assamese Travel Storyteller, Minimalist Vlogger & Content Creator from Assam, India. Simple Living, Big Adventures. Founder of eg.frog." />
+  <meta name="keywords" content="Himangshu, Assam Vlogger, Travel Storyteller, Assamese Content Creator, Minimalist Vlogger, eg.frog, himangshu.in" />
+  <meta name="author" content="Himangshu" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://himangshu.in/" />
 
-        body {
-            line-height: 1.7;
-            color: var(--primary);
-            background: var(--light);
-        }
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://himangshu.in/" />
+  <meta property="og:title" content="Himangshu | Travel Storyteller · Assam Vlogger" />
+  <meta property="og:description" content="Assamese Content Creator & Minimalist Vlogger. Simple Living, Big Adventures. Founder of eg.frog." />
+  <meta property="og:image" content="https://himangshu.in/og-image.jpg" />
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Himangshu | Travel Storyteller · Assam Vlogger" />
+  <meta name="twitter:description" content="Assamese Content Creator & Minimalist Vlogger. Simple Living, Big Adventures." />
+  <meta name="twitter:image" content="https://himangshu.in/og-image.jpg" />
 
-        /* Navigation */
-        nav {
-            background: #fff;
-            padding: 1rem 0;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Himangshu",
+    "url": "https://himangshu.in",
+    "sameAs": [
+      "https://www.instagram.com/himangshu.in",
+      "https://www.youtube.com/@himangshu"
+    ],
+    "jobTitle": "Travel Storyteller & Content Creator",
+    "description": "Assamese Content Creator, Minimalist Vlogger, and Founder of eg.frog. Simple Living, Big Adventures.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "Assam",
+      "addressCountry": "IN"
+    }
+  }
+  </script>
 
-        .nav-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
 
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary);
-            letter-spacing: 1px;
-        }
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --bg2: #111118;
+      --bg3: #18181f;
+      --surface: rgba(255,255,255,0.04);
+      --border: rgba(255,255,255,0.08);
+      --accent: #c8a96e;
+      --accent2: #e8c98e;
+      --text: #f0ede8;
+      --text-muted: #8a8690;
+      --text-soft: #c4bfb8;
+      --green: #25D366;
+      --radius: 16px;
+      --radius-sm: 10px;
+    }
 
-        .nav-links a {
-            margin-left: 2.5rem;
-            text-decoration: none;
-            color: var(--primary);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-        .nav-links a:hover {
-            color: var(--secondary);
-        }
+    html { scroll-behavior: smooth; }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, rgba(44,62,80,0.95) 0%, rgba(52,73,94,0.95) 100%),
-                        url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5') center/cover;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: #fff;
-            padding-top: 80px;
-        }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
 
-        .hero h1 {
-            font-size: 3.8rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
+    /* ── NOISE TEXTURE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
 
-        .hero .subheading {
-            font-size: 1.4rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
+    /* ── HERO GRADIENT ── */
+    .hero-glow {
+      position: fixed;
+      top: -200px; left: 50%;
+      transform: translateX(-50%);
+      width: 700px; height: 700px;
+      background: radial-gradient(ellipse, rgba(200,169,110,0.12) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
 
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            padding: 1.2rem 2.5rem;
-            background: var(--secondary);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 4px 15px rgba(39,174,96,0.3);
-        }
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 40px;
+      background: linear-gradient(to bottom, rgba(10,10,15,0.95), transparent);
+      backdrop-filter: blur(0px);
+    }
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--accent); }
 
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(39,174,96,0.4);
-        }
+    /* ── MAIN LAYOUT ── */
+    main {
+      position: relative; z-index: 1;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 120px 24px 80px;
+    }
 
-        /* Stats Section */
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            padding: 5rem 0;
-        }
+    /* ── PROFILE SECTION ── */
+    .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 56px;
+      animation: fadeUp 0.8s ease both;
+    }
 
-        .stat-box {
-            text-align: center;
-            padding: 2.5rem;
-            background: #fff;
-            border-radius: 15px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
-            transition: transform 0.3s;
-        }
+    .avatar-wrap {
+      position: relative;
+      width: 110px; height: 110px;
+      margin-bottom: 24px;
+    }
+    .avatar-ring {
+      position: absolute; inset: -4px;
+      border-radius: 50%;
+      background: conic-gradient(from 0deg, #c8a96e, #f0d898, #a07840, #c8a96e);
+      animation: spin 8s linear infinite;
+    }
+    .avatar-ring::after {
+      content: '';
+      position: absolute; inset: 3px;
+      border-radius: 50%;
+      background: var(--bg);
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
 
-        .stat-box:hover {
-            transform: translateY(-10px);
-        }
+    .avatar-img {
+      position: absolute; inset: 6px;
+      border-radius: 50%;
+      object-fit: cover;
+      z-index: 1;
+      background: linear-gradient(135deg, #1a1a25, #2a2030);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Syne', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--accent);
+    }
 
-        .stat-box h3 {
-            font-size: 2.8rem;
-            color: var(--secondary);
-            margin-bottom: 0.5rem;
-        }
+    .profile-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 6vw, 3rem);
+      font-weight: 300;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .profile-name span { color: var(--accent); font-style: italic; }
 
-        /* Pricing Section */
-        .pricing {
-            padding: 6rem 0;
-            background: #fff;
-        }
+    .profile-tagline {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
 
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-        }
+    .profile-bio {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--text-soft);
+      max-width: 420px;
+      margin-bottom: 20px;
+    }
 
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-        }
+    .profile-stats {
+      display: flex; gap: 32px;
+      margin-bottom: 24px;
+    }
+    .stat { text-align: center; }
+    .stat-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .stat-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
 
-        .pricing-card {
-            background: #fff;
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-            border: 2px solid transparent;
-        }
+    .profile-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 5px 14px;
+      background: rgba(200,169,110,0.1);
+      border: 1px solid rgba(200,169,110,0.2);
+      border-radius: 100px;
+      font-size: 0.72rem;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
 
-        .pricing-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--secondary);
-        }
+    /* ── LINKS GRID ── */
+    .links-section {
+      margin-bottom: 56px;
+      animation: fadeUp 0.8s 0.15s ease both;
+    }
+    .section-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      padding-left: 4px;
+    }
 
-        .pricing-card h3 {
-            font-size: 1.6rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary);
-        }
+    .links-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
 
-        .price {
-            font-size: 2.8rem;
-            color: var(--secondary);
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
+    .link-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 20px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      text-decoration: none;
+      color: var(--text);
+      transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .link-card::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(200,169,110,0.05), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .link-card:hover {
+      border-color: rgba(200,169,110,0.3);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3), 0 0 0 1px rgba(200,169,110,0.1);
+    }
+    .link-card:hover::before { opacity: 1; }
 
-        .price span {
-            font-size: 1.2rem;
-            color: #666;
-            font-weight: normal;
-        }
+    .link-card.featured {
+      background: linear-gradient(135deg, rgba(200,169,110,0.12), rgba(200,169,110,0.04));
+      border-color: rgba(200,169,110,0.25);
+    }
 
-        .pricing-features {
-            list-style: none;
-            margin-bottom: 2.5rem;
-        }
+    .link-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .link-icon.ig { background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); }
+    .link-icon.yt { background: #ff0000; }
+    .link-icon.wa { background: #25D366; }
+    .link-icon.blog { background: linear-gradient(135deg, #c8a96e, #a07840); }
+    .link-icon.web { background: linear-gradient(135deg, #1a1a2e, #16213e); border: 1px solid var(--border); }
+    .link-icon.frog { background: linear-gradient(135deg, #2d5a27, #4a7c3f); }
 
-        .pricing-features li {
-            padding: 0.8rem 0;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            align-items: center;
-        }
+    .link-content { flex: 1; min-width: 0; }
+    .link-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+    .link-desc {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
 
-        .pricing-features li:last-child {
-            border-bottom: none;
-        }
+    .link-arrow {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      transition: transform 0.3s, color 0.3s;
+    }
+    .link-card:hover .link-arrow {
+      transform: translateX(4px);
+      color: var(--accent);
+    }
 
-        .pricing-features li i {
-            color: var(--secondary);
-            margin-right: 0.8rem;
-        }
+    /* WhatsApp CTA */
+    .wa-cta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 24px;
+      background: linear-gradient(135deg, rgba(37,211,102,0.12), rgba(37,211,102,0.04));
+      border: 1px solid rgba(37,211,102,0.2);
+      border-radius: var(--radius);
+      text-decoration: none;
+      color: var(--text);
+      transition: all 0.3s;
+      margin-bottom: 10px;
+    }
+    .wa-cta:hover {
+      border-color: rgba(37,211,102,0.5);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(37,211,102,0.1);
+    }
+    .wa-pulse {
+      width: 10px; height: 10px;
+      background: #25D366;
+      border-radius: 50%;
+      position: relative;
+      flex-shrink: 0;
+    }
+    .wa-pulse::after {
+      content: '';
+      position: absolute; inset: -4px;
+      border-radius: 50%;
+      border: 2px solid #25D366;
+      animation: pulse 2s ease-out infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(2.5); opacity: 0; }
+    }
 
-        /* Service Order Form */
-        .order-section {
-            padding: 6rem 0;
-            background: var(--light);
-        }
+    /* ── BLOG SECTION ── */
+    .blog-section {
+      margin-bottom: 56px;
+      animation: fadeUp 0.8s 0.3s ease both;
+    }
 
-        .order-form {
-            max-width: 800px;
-            margin: 0 auto;
-            background: #fff;
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-        }
+    .section-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--text);
+    }
+    .section-view-all {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .section-view-all:hover { opacity: 0.7; }
 
-        .form-group {
-            margin-bottom: 2rem;
-        }
+    .blog-grid {
+      display: grid;
+      gap: 12px;
+    }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 0.8rem;
-            font-weight: 600;
-            color: var(--primary);
-        }
+    .blog-card {
+      display: flex;
+      gap: 16px;
+      padding: 20px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      text-decoration: none;
+      color: var(--text);
+      transition: all 0.3s;
+    }
+    .blog-card:hover {
+      border-color: rgba(200,169,110,0.25);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    }
 
-        .service-selector {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
+    .blog-emoji {
+      font-size: 2rem;
+      flex-shrink: 0;
+      line-height: 1;
+      margin-top: 2px;
+    }
 
-        .service-option {
-            padding: 1.5rem;
-            border: 2px solid #eee;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
+    .blog-meta {
+      display: flex; gap: 8px;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+    }
+    .blog-tag {
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(200,169,110,0.1);
+      border-radius: 4px;
+      padding: 2px 8px;
+    }
+    .blog-date {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      display: flex; align-items: center;
+    }
 
-        .service-option.selected {
-            border-color: var(--secondary);
-            background: rgba(39,174,96,0.05);
-        }
+    .blog-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 500;
+      line-height: 1.4;
+      margin-bottom: 6px;
+    }
+    .blog-excerpt {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
 
-        .service-option input {
-            display: none;
-        }
+    /* ── GALLERY SECTION ── */
+    .gallery-section {
+      margin-bottom: 56px;
+      animation: fadeUp 0.8s 0.4s ease both;
+    }
 
-        .budget-range {
-            width: 100%;
-            height: 8px;
-            background: #eee;
-            border-radius: 4px;
-            outline: none;
-            -webkit-appearance: none;
-        }
+    .gallery-scroll {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding-bottom: 4px;
+      margin: 0 -24px;
+      padding: 0 24px 4px;
+    }
+    .gallery-scroll::-webkit-scrollbar { display: none; }
 
-        .budget-range::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            width: 20px;
-            height: 20px;
-            background: var(--secondary);
-            border-radius: 50%;
-            cursor: pointer;
-        }
+    .gallery-item {
+      flex-shrink: 0;
+      width: 140px; height: 180px;
+      border-radius: var(--radius-sm);
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      position: relative;
+    }
+    .gallery-item .placeholder {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 8px;
+      color: var(--text-muted);
+      font-size: 0.7rem;
+      text-align: center;
+      padding: 12px;
+    }
+    .gallery-item .gi-icon { font-size: 2rem; }
 
-        .timeline-select {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #eee;
-            border-radius: 8px;
-            font-size: 1rem;
-        }
+    /* ── FOOTER ── */
+    footer {
+      position: relative; z-index: 1;
+      text-align: center;
+      padding: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
+    /* ── WHATSAPP FLOAT ── */
+    .wa-float {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      z-index: 200;
+      width: 56px; height: 56px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 24px rgba(37,211,102,0.4);
+      transition: all 0.3s;
+      animation: floatIn 0.6s 1s ease both;
+    }
+    .wa-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 32px rgba(37,211,102,0.5);
+    }
+    .wa-float svg { width: 28px; height: 28px; }
+    @keyframes floatIn {
+      from { transform: scale(0) rotate(-180deg); opacity: 0; }
+      to { transform: scale(1) rotate(0deg); opacity: 1; }
+    }
 
-            .stats {
-                grid-template-columns: 1fr;
-            }
+    /* ── TOOLTIP ON WA FLOAT ── */
+    .wa-float-wrap { position: fixed; bottom: 28px; right: 28px; z-index: 200; }
+    .wa-tooltip {
+      position: absolute;
+      right: 68px; top: 50%;
+      transform: translateY(-50%);
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-size: 0.78rem;
+      white-space: nowrap;
+      color: var(--text);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+    .wa-float-wrap:hover .wa-tooltip { opacity: 1; }
+    .wa-float-wrap .wa-float { position: static; }
 
-            .order-form {
-                padding: 2rem;
-            }
-        }
-    </style>
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--border), transparent);
+      margin: 0 0 40px;
+    }
+
+    /* ── MOBILE NAV ── */
+    .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+    .hamburger span { width: 22px; height: 1.5px; background: var(--text-muted); display: block; transition: 0.3s; }
+
+    @media (max-width: 640px) {
+      nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      main { padding: 100px 16px 80px; }
+      .profile-stats { gap: 20px; }
+      .wa-float-wrap { bottom: 20px; right: 16px; }
+    }
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="container nav-content">
-            <div class="logo">John Doe</div>
-            <div class="nav-links">
-                <a href="#services">Services</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#order">Order</a>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>Transform Your Digital Presence</h1>
-            <p class="subheading">8+ Years Experience in SEO & WordPress Excellence</p>
-            <a href="#order" class="cta-button">Start Your Project Now</a>
-            
-            <!-- Stats Grid -->
-            <div class="stats">
-                <div class="stat-box">
-                    <h3>300%+</h3>
-                    <p>Average Traffic Growth</p>
-                </div>
-                <div class="stat-box">
-                    <h3>50+</h3>
-                    <p>Websites Launched</p>
-                </div>
-                <div class="stat-box">
-                    <h3>95%</h3>
-                    <p>Client Satisfaction</p>
-                </div>
-            </div>
+  <div class="hero-glow"></div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">himangshu.in</a>
+    <ul class="nav-links">
+      <li><a href="#links">Links</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#gallery">Work</a></li>
+      <li><a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener">Chat</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu(this)">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ── PROFILE ── -->
+    <section class="profile">
+      <div class="avatar-wrap">
+        <div class="avatar-ring"></div>
+        <div class="avatar-img">H</div>
+      </div>
+
+      <h1 class="profile-name">Himan<span>gshu</span></h1>
+      <p class="profile-tagline">Travel Storyteller · Assam Vlogger · Content Creator</p>
+
+      <p class="profile-bio">
+        Assamese storyteller capturing the soul of the Northeast — one frame at a time. 
+        Simple living, big adventures. Founder of <strong style="color:var(--accent)">@eg.frog</strong>.
+      </p>
+
+      <div class="profile-stats">
+        <div class="stat">
+          <div class="stat-num">207</div>
+          <div class="stat-label">Posts</div>
         </div>
+        <div class="stat">
+          <div class="stat-num">2.8K</div>
+          <div class="stat-label">Followers</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">∞</div>
+          <div class="stat-label">Stories</div>
+        </div>
+      </div>
+
+      <div class="profile-badge">
+        <span>🎬</span> Reel Creator · Assam, India
+      </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing">
-        <div class="container">
-            <h2 class="section-title">Service Packages</h2>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>SEO Optimization</h3>
-                    <div class="price">$799<span>/month</span></div>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i>Keyword Research</li>
-                        <li><i class="fas fa-check"></i>Technical SEO Audit</li>
-                        <li><i class="fas fa-check"></i>Content Strategy</li>
-                        <li><i class="fas fa-check"></i>Monthly Reporting</li>
-                    </ul>
-                    <a href="#order" class="cta-button">Select Plan</a>
-                </div>
+    <!-- ── LINKS ── -->
+    <section class="links-section" id="links">
+      <p class="section-label">Connect & Explore</p>
+      <div class="links-grid">
 
-                <div class="pricing-card">
-                    <h3>WordPress Pro</h3>
-                    <div class="price">$2,499<span>/project</span></div>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i>Custom Theme Design</li>
-                        <li><i class="fas fa-check"></i>WooCommerce Setup</li>
-                        <li><i class="fas fa-check"></i>Speed Optimization</li>
-                        <li><i class="fas fa-check"></i>1 Month Support</li>
-                    </ul>
-                    <a href="#order" class="cta-button">Select Plan</a>
-                </div>
+        <!-- WhatsApp Chat CTA -->
+        <a href="https://wa.me/91XXXXXXXXXX?text=Hey%20Himangshu!%20I%20found%20you%20through%20your%20bio%20link%20%F0%9F%91%8B" target="_blank" rel="noopener" class="wa-cta">
+          <div class="wa-pulse"></div>
+          <div style="flex:1">
+            <div style="font-size:0.9rem;font-weight:500;margin-bottom:2px;">Chat on WhatsApp</div>
+            <div style="font-size:0.75rem;color:var(--text-muted)">Say hello — I reply personally 👋</div>
+          </div>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.173.578 4.208 1.581 5.966L.057 23.852a.5.5 0 0 0 .61.61l5.886-1.524A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.67-.488-5.221-1.342l-.374-.213-3.875 1.003 1.003-3.875-.213-.374A9.965 9.965 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        </a>
 
-                <div class="pricing-card">
-                    <h3>Full Package</h3>
-                    <div class="price">$3,299<span>/project</span></div>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i>Website + SEO</li>
-                        <li><i class="fas fa-check"></i>Premium Plugins</li>
-                        <li><i class="fas fa-check"></i>3 Months Support</li>
-                        <li><i class="fas fa-check"></i>Priority Service</li>
-                    </ul>
-                    <a href="#order" class="cta-button">Select Plan</a>
-                </div>
-            </div>
-        </div>
+        <a href="https://www.instagram.com/himangshu.in" target="_blank" rel="noopener" class="link-card featured">
+          <div class="link-icon ig">📸</div>
+          <div class="link-content">
+            <div class="link-title">Instagram — @himangshu.in</div>
+            <div class="link-desc">Travel reels, stories & everyday Assam</div>
+          </div>
+          <span class="link-arrow">→</span>
+        </a>
+
+        <a href="https://www.youtube.com/@himangshu" target="_blank" rel="noopener" class="link-card">
+          <div class="link-icon yt">▶</div>
+          <div class="link-content">
+            <div class="link-title">YouTube Channel</div>
+            <div class="link-desc">Minimalist travel vlogs from Northeast India</div>
+          </div>
+          <span class="link-arrow">→</span>
+        </a>
+
+        <a href="https://himangshu.in" target="_blank" rel="noopener" class="link-card">
+          <div class="link-icon web">🌐</div>
+          <div class="link-content">
+            <div class="link-title">himangshu.in</div>
+            <div class="link-desc">My personal website & portfolio</div>
+          </div>
+          <span class="link-arrow">→</span>
+        </a>
+
+        <a href="#blog" class="link-card">
+          <div class="link-icon blog">✍️</div>
+          <div class="link-content">
+            <div class="link-title">Blog & Travel Guides</div>
+            <div class="link-desc">Stories, tips & hidden places of Assam</div>
+          </div>
+          <span class="link-arrow">→</span>
+        </a>
+
+        <a href="https://eg.frog" target="_blank" rel="noopener" class="link-card">
+          <div class="link-icon frog">🐸</div>
+          <div class="link-content">
+            <div class="link-title">eg.frog — My Brand</div>
+            <div class="link-desc">Founder & Creative Director</div>
+          </div>
+          <span class="link-arrow">→</span>
+        </a>
+
+      </div>
     </section>
 
-    <!-- Service Order Section -->
-    <section id="order" class="order-section">
-        <div class="container">
-            <div class="order-form">
-                <h2 class="section-title">Custom Order Request</h2>
-                <form id="serviceOrderForm">
-                    <!-- Service Selection -->
-                    <div class="form-group">
-                        <label>Select Services</label>
-                        <div class="service-selector">
-                            <div class="service-option" onclick="toggleService(this)">
-                                <input type="checkbox" name="service" value="seo">
-                                <h4>SEO Services</h4>
-                                <p>Complete search engine optimization</p>
-                            </div>
-                            <div class="service-option" onclick="toggleService(this)">
-                                <input type="checkbox" name="service" value="wordpress">
-                                <h4>WordPress Design</h4>
-                                <p>Custom website development</p>
-                            </div>
-                            <div class="service-option" onclick="toggleService(this)">
-                                <input type="checkbox" name="service" value="maintenance">
-                                <h4>Ongoing Support</h4>
-                                <p>Monthly maintenance & updates</p>
-                            </div>
-                        </div>
-                    </div>
+    <div class="divider"></div>
 
-                    <!-- Project Details -->
-                    <div class="form-group">
-                        <label>Project Description</label>
-                        <textarea rows="5" placeholder="Describe your project..." required></textarea>
-                    </div>
+    <!-- ── BLOG SECTION ── -->
+    <section class="blog-section" id="blog">
+      <div class="section-header">
+        <h2 class="section-title">Latest from the Blog</h2>
+        <a href="blog.html" class="section-view-all">View all →</a>
+      </div>
 
-                    <!-- Budget Range -->
-                    <div class="form-group">
-                        <label>Estimated Budget</label>
-                        <select class="timeline-select">
-                            <option>$1,000 - $3,000</option>
-                            <option>$3,000 - $5,000</option>
-                            <option>$5,000+</option>
-                        </select>
-                    </div>
+      <div class="blog-grid">
 
-                    <!-- Timeline -->
-                    <div class="form-group">
-                        <label>Project Timeline</label>
-                        <select class="timeline-select">
-                            <option>1-2 Weeks</option>
-                            <option>2-4 Weeks</option>
-                            <option>1-3 Months</option>
-                        </select>
-                    </div>
-
-                    <!-- Contact Info -->
-                    <div class="form-group">
-                        <label>Your Contact Information</label>
-                        <input type="email" placeholder="Email address" required>
-                        <input type="tel" placeholder="Phone number (optional)">
-                    </div>
-
-                    <button type="submit" class="cta-button">Submit Request</button>
-                </form>
+        <a href="blog/kaziranga-travel-guide.html" class="blog-card">
+          <div class="blog-emoji">🦏</div>
+          <div style="flex:1">
+            <div class="blog-meta">
+              <span class="blog-tag">Travel Guide</span>
+              <span class="blog-date">May 2025</span>
             </div>
-        </div>
+            <div class="blog-title">The Ultimate Guide to Kaziranga National Park</div>
+            <div class="blog-excerpt">Everything you need to know before visiting Assam's most iconic wildlife sanctuary — jeep safaris, best time to visit, hidden spots.</div>
+          </div>
+        </a>
+
+        <a href="blog/majuli-island.html" class="blog-card">
+          <div class="blog-emoji">🌊</div>
+          <div style="flex:1">
+            <div class="blog-meta">
+              <span class="blog-tag">Story</span>
+              <span class="blog-date">Mar 2025</span>
+            </div>
+            <div class="blog-title">Majuli — The World's Largest River Island & Its Fading Culture</div>
+            <div class="blog-excerpt">A slow, soulful journey to Majuli, the heart of Assamese culture, Vaishnavite monasteries, and the Mising tribe.</div>
+          </div>
+        </a>
+
+        <a href="blog/assam-minimalist-photography.html" class="blog-card">
+          <div class="blog-emoji">📷</div>
+          <div style="flex:1">
+            <div class="blog-meta">
+              <span class="blog-tag">Photography</span>
+              <span class="blog-date">Feb 2025</span>
+            </div>
+            <div class="blog-title">Minimalist Photography in Assam — My Gear & Process</div>
+            <div class="blog-excerpt">How I capture the quiet, beautiful moments of Northeast India with minimal gear and maximum intention.</div>
+          </div>
+        </a>
+
+        <a href="blog/northeast-india-road-trip.html" class="blog-card">
+          <div class="blog-emoji">🛣️</div>
+          <div style="flex:1">
+            <div class="blog-meta">
+              <span class="blog-tag">Road Trip</span>
+              <span class="blog-date">Jan 2025</span>
+            </div>
+            <div class="blog-title">14 Days Road Trip Through Northeast India — Full Itinerary</div>
+            <div class="blog-excerpt">From Guwahati to Tawang, Meghalaya and back — a complete route, budget breakdown, and honest travel notes.</div>
+          </div>
+        </a>
+
+      </div>
     </section>
 
-    <script>
-        // Service Selection Toggle
-        function toggleService(element) {
-            element.classList.toggle('selected');
-            const checkbox = element.querySelector('input');
-            checkbox.checked = !checkbox.checked;
+    <div class="divider"></div>
+
+    <!-- ── GALLERY ── -->
+    <section class="gallery-section" id="gallery">
+      <div class="section-header">
+        <h2 class="section-title">Visual Diary</h2>
+        <a href="https://www.instagram.com/himangshu.in" target="_blank" class="section-view-all">Instagram →</a>
+      </div>
+      <div class="gallery-scroll">
+        <div class="gallery-item"><div class="placeholder"><span class="gi-icon">🌿</span><span>Tea Gardens, Assam</span></div></div>
+        <div class="gallery-item"><div class="placeholder"><span class="gi-icon">🌊</span><span>Ocean Walk</span></div></div>
+        <div class="gallery-item"><div class="placeholder"><span class="gi-icon">🏔️</span><span>Mountain Trails</span></div></div>
+        <div class="gallery-item"><div class="placeholder"><span class="gi-icon">🎬</span><span>Behind the Lens</span></div></div>
+        <div class="gallery-item"><div class="placeholder"><span class="gi-icon">🌅</span><span>Golden Hour</span></div></div>
+        <div class="gallery-item"><div class="placeholder"><span class="gi-icon">🐘</span><span>Wildlife Moments</span></div></div>
+      </div>
+      <p style="font-size:0.72rem;color:var(--text-muted);margin-top:12px;text-align:center;">Replace gallery items with your actual photos for the best experience</p>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <p style="margin-bottom:6px;font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--text-soft)">Made with love in Assam 🌿</p>
+    <p>© 2025 <a href="https://himangshu.in">himangshu.in</a> · All rights reserved</p>
+  </footer>
+
+  <!-- ── FLOATING WHATSAPP ── -->
+  <div class="wa-float-wrap">
+    <span class="wa-tooltip">Chat with me 👋</span>
+    <a href="https://wa.me/91XXXXXXXXXX?text=Hey%20Himangshu!%20I%20found%20your%20bio%20link%20%F0%9F%91%8B" target="_blank" rel="noopener" class="wa-float">
+      <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.173.578 4.208 1.581 5.966L.057 23.852a.5.5 0 0 0 .61.61l5.886-1.524A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.67-.488-5.221-1.342l-.374-.213-3.875 1.003 1.003-3.875-.213-.374A9.965 9.965 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+      </svg>
+    </a>
+  </div>
+
+  <script>
+    function toggleMenu(el) {
+      el.classList.toggle('open');
+    }
+
+    // Intersection Observer for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
         }
+      });
+    }, { threshold: 0.1 });
 
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Form Submission
-        document.getElementById('serviceOrderForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Add your form submission logic here
-            alert('Thank you! Your request has been submitted. I will contact you within 24 hours.');
-            this.reset();
-            document.querySelectorAll('.service-option').forEach(opt => {
-                opt.classList.remove('selected');
-            });
-        });
-    </script>
+    document.querySelectorAll('.links-section, .blog-section, .gallery-section').forEach(el => {
+      el.style.animationPlayState = 'paused';
+      observer.observe(el);
+    });
+  </script>
 </body>
 </html>
