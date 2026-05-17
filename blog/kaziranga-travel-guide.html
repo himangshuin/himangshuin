@@ -34,14 +34,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
 
   <style>
-    :root {
-      --bg: #0a0a0f; --bg3: #18181f;
-      --surface: rgba(255,255,255,0.04);
-      --border: rgba(255,255,255,0.08);
-      --accent: #c8a96e; --accent2: #e8c98e;
-      --text: #f0ede8; --text-muted: #8a8690; --text-soft: #c4bfb8;
-      --radius: 16px;
-    }
+    :root{
+  --bg:#080c0a;--bg1:#0d1410;--bg2:#111a14;
+  --surf:rgba(255,255,255,0.04);--bdr:rgba(255,255,255,0.08);
+  --txt:#eef2ee;--txt2:rgba(238,242,238,0.65);--txt3:rgba(238,242,238,0.38);
+  --acc:#e8721a;--adim:rgba(232,114,26,0.15);--tel:#2dcc9e;--gld:#f0b429;
+}
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-weight: 300; }
@@ -119,6 +117,7 @@
   </style>
 </head>
 <body>
+<canvas id="bgCanvas" style="position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.45;"></canvas>
 
 <nav>
   <a href="../index.html" class="nav-logo">himangshu.in</a>
