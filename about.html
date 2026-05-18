@@ -56,25 +56,32 @@
 
 <style>
   
+
 :root{
-  --bg:#080c0a;--bg1:#0d1410;--bg2:#111a14;
-  --surf:rgba(255,255,255,0.04);--surf2:rgba(255,255,255,0.07);
-  --bdr:rgba(255,255,255,0.08);
-  --txt:#eef2ee;--txt2:rgba(238,242,238,0.65);--txt3:rgba(238,242,238,0.38);
-  --acc:#e8721a;--adim:rgba(232,114,26,0.15);--asoft:rgba(232,114,26,0.3);
-  --tel:#2dcc9e;--tdim:rgba(45,204,158,0.12);
-  --gld:#f0b429;--gdim:rgba(240,180,41,0.12);
-  --grn:#25D366;--r:14px;--rl:22px;--rxl:32px;
+  --bg:#fffbf5;--bg1:#fff8ee;--bg2:#fef3e2;
+  --surf:rgba(249,115,22,0.05);--surf2:rgba(249,115,22,0.09);
+  --bdr:rgba(249,115,22,0.14);
+  --txt:#1a1008;--txt2:#5c4a30;--txt3:#9c8060;
+  --acc:#f97316;--adim:#fff1e6;--asoft:rgba(249,115,22,0.25);
+  --tel:#0ea5e9;--tdim:#e0f2fe;
+  --gld:#ca8a04;--gdim:#fef9c3;
+  --grn:#16a34a;--r:14px;--rl:20px;--rxl:28px;
+  --radius-xl:28px;--radius-md:16px;--radius-sm:10px;
+  --shadow-sm:0 2px 12px rgba(0,0,0,.05);
+  --shadow-md:0 8px 32px rgba(249,115,22,.1);
+  --shadow-lg:0 16px 64px rgba(249,115,22,.14);
 }
+
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 700px 500px at 0% 0%,rgba(249,115,22,.07),transparent),radial-gradient(ellipse 600px 400px at 100% 100%,rgba(14,165,233,.05),transparent);pointer-events:none;z-index:0;}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;overflow-x:hidden;}
 
 
   /* NAV */
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(8,12,10,0.92); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--bdr); padding: 0 24px; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,251,245,0.95); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--bdr); padding: 0 24px; }
   .nav-inner { max-width: 1100px; margin: 0 auto; height: 64px; display: flex; align-items: center; justify-content: space-between; }
-  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; color: var(--txt); text-decoration: none; letter-spacing: -0.3px; }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--txt); text-decoration: none; letter-spacing: -0.3px; }
   .nav-logo span { color: var(--acc); }
   .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
   .nav-links a { font-size: 14px; font-weight: 500; color: var(--txt2); text-decoration: none; letter-spacing: 0.3px; transition: color 0.2s; }
@@ -92,14 +99,14 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);line
   .breadcrumb { font-size: 13px; color: var(--txt3); margin-bottom: 20px; }
   .breadcrumb a { color: var(--acc); text-decoration: none; }
   .page-hero-inner .section-label { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--acc); margin-bottom: 12px; }
-  .page-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 5vw, 56px); font-weight: 700; color: var(--txt); line-height: 1.1; letter-spacing: -1px; margin-bottom: 16px; }
+  .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 5vw, 56px); font-weight: 700; color: var(--txt); line-height: 1.1; letter-spacing: -1px; margin-bottom: 16px; }
   .page-hero p { font-size: 17px; color: var(--txt2); max-width: 600px; line-height: 1.7; }
 
   /* SECTIONS */
   section { padding: 80px 24px; }
   .section-inner { max-width: 1100px; margin: 0 auto; }
   .section-label { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--acc); margin-bottom: 12px; }
-  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 4vw, 44px); font-weight: 700; color: var(--txt); line-height: 1.15; letter-spacing: -0.5px; margin-bottom: 16px; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 44px); font-weight: 700; color: var(--txt); line-height: 1.15; letter-spacing: -0.5px; margin-bottom: 16px; }
   .section-desc { font-size: 16px; color: var(--txt2); max-width: 580px; line-height: 1.7; }
 
   /* ABOUT GRID */
@@ -112,17 +119,17 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);line
   .avatar-wrap { position: relative; width: 110px; height: 110px; margin: 0 auto 20px; }
   .avatar-ring { position: absolute; inset: -4px; border-radius: 50%; background: linear-gradient(135deg, var(--acc), var(--gld), var(--tel)); animation: spin 8s linear infinite; }
   @keyframes spin { to { transform: rotate(360deg); } }
-  .avatar-inner { position: relative; z-index: 1; width: 110px; height: 110px; border-radius: 50%; background: var(--adim); border: 4px solid white; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 700; color: var(--acc); overflow: hidden; }
+  .avatar-inner { position: relative; z-index: 1; width: 110px; height: 110px; border-radius: 50%; background: var(--adim); border: 4px solid white; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 700; color: var(--acc); overflow: hidden; }
   .avatar-inner img { width: 100%; height: 100%; object-fit: cover; }
   .avatar-dot { position: absolute; bottom: 4px; right: 4px; width: 16px; height: 16px; background: #25D366; border-radius: 50%; border: 3px solid white; z-index: 2; animation: pulse 2s infinite; }
   @keyframes pulse { 0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102,0.4); } 50% { transform: scale(1.1); box-shadow: 0 0 0 8px rgba(37,211,102,0); } }
-  .profile-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; text-align: center; color: var(--txt); margin-bottom: 4px; }
+  .profile-name { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; text-align: center; color: var(--txt); margin-bottom: 4px; }
   .profile-handle { text-align: center; font-size: 13px; color: var(--txt3); margin-bottom: 8px; font-weight: 500; }
   .profile-location { text-align: center; font-size: 13px; color: var(--txt2); margin-bottom: 20px; }
   .stats-row { display: flex; border: 1px solid var(--bdr); border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 20px; }
   .stat-item { flex: 1; text-align: center; padding: 14px 8px; border-right: 1px solid var(--bdr); }
   .stat-item:last-child { border-right: none; }
-  .stat-num { display: block; font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; color: var(--txt); }
+  .stat-num { display: block; font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--txt); }
   .stat-label { font-size: 10px; color: var(--txt3); font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
   .sidebar-links { display: flex; flex-direction: column; gap: 10px; }
   .sidebar-link { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-radius: var(--radius-sm); background: var(--bg); color: var(--txt); text-decoration: none; font-weight: 500; font-size: 14px; transition: all 0.2s; border: 1px solid var(--bdr); }
@@ -130,12 +137,12 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);line
   .sidebar-link svg { width: 18px; height: 18px; flex-shrink: 0; }
 
   /* STORY */
-  .story-content h2 { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 700; color: var(--txt); margin-bottom: 16px; margin-top: 40px; letter-spacing: -0.5px; }
+  .story-content h2 { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; color: var(--txt); margin-bottom: 16px; margin-top: 40px; letter-spacing: -0.5px; }
   .story-content h2:first-child { margin-top: 0; }
   .story-content p { font-size: 16px; color: var(--txt2); line-height: 1.85; margin-bottom: 18px; }
   .story-content strong { color: var(--txt); font-weight: 600; }
   .story-quote { background: var(--adim); border-left: 4px solid var(--acc); padding: 24px 28px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; margin: 32px 0; }
-  .story-quote p { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-style: italic; color: var(--txt); line-height: 1.5; margin-bottom: 8px; }
+  .story-quote p { font-family: 'Playfair Display', serif; font-size: 20px; font-style: italic; color: var(--txt); line-height: 1.5; margin-bottom: 8px; }
   .story-quote cite { font-size: 13px; color: var(--txt3); font-weight: 600; }
 
   /* TIMELINE */
@@ -145,7 +152,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);line
   .timeline-item { position: relative; margin-bottom: 40px; }
   .timeline-item::before { content: ''; position: absolute; left: -26px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--acc); border: 3px solid white; box-shadow: 0 0 0 2px var(--acc); }
   .timeline-year { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--acc); margin-bottom: 6px; }
-  .timeline-title { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; color: var(--txt); margin-bottom: 8px; }
+  .timeline-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--txt); margin-bottom: 8px; }
   .timeline-body { font-size: 15px; color: var(--txt2); line-height: 1.7; }
 
   /* SKILLS */
@@ -154,15 +161,15 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);line
   .skill-card { background: var(--bg1); border-radius: var(--radius-md); padding: 24px; border: 1px solid var(--bdr); box-shadow: var(--shadow-sm); transition: all 0.25s; }
   .skill-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
   .skill-icon { font-size: 32px; margin-bottom: 14px; }
-  .skill-name { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 700; color: var(--txt); margin-bottom: 8px; }
+  .skill-name { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--txt); margin-bottom: 8px; }
   .skill-desc { font-size: 14px; color: var(--txt2); line-height: 1.6; }
 
   /* VALUES */
   .values-section { background: var(--bg1); }
   .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 48px; }
   .value-card { padding: 28px; border-radius: var(--radius-md); border: 1px solid var(--bdr); background: var(--bg); }
-  .value-num { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 700; color: rgba(200,101,26,0.15); line-height: 1; margin-bottom: 10px; }
-  .value-title { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; color: var(--txt); margin-bottom: 10px; }
+  .value-num { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 700; color: rgba(200,101,26,0.15); line-height: 1; margin-bottom: 10px; }
+  .value-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--txt); margin-bottom: 10px; }
   .value-body { font-size: 14px; color: var(--txt2); line-height: 1.75; }
 
   /* CTA */
@@ -170,7 +177,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);line
   .cta-card { background: var(--txt); border-radius: var(--radius-xl); padding: 60px; text-align: center; color: var(--txt); position: relative; overflow: hidden; }
   .cta-card::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 50%, rgba(200,101,26,0.3), transparent 60%), radial-gradient(ellipse at 70% 50%, rgba(26,122,106,0.2), transparent 60%); }
   .cta-card * { position: relative; z-index: 1; }
-  .cta-card h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 4vw, 44px); font-weight: 700; color: var(--txt); margin-bottom: 16px; }
+  .cta-card h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 44px); font-weight: 700; color: var(--txt); margin-bottom: 16px; }
   .cta-card p { font-size: 17px; color: rgba(255,255,255,0.75); max-width: 500px; margin: 0 auto 36px; line-height: 1.7; }
   .cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
   .btn-white { display: inline-flex; align-items: center; gap: 8px; background: var(--bg1); color: var(--txt); padding: 14px 28px; border-radius: 50px; font-weight: 600; font-size: 15px; text-decoration: none; transition: all 0.25s; }
@@ -181,7 +188,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);line
   /* FOOTER */
   footer { background: var(--txt); color: rgba(255,255,255,0.6); padding: 40px 24px; text-align: center; }
   .footer-inner { max-width: 1100px; margin: 0 auto; }
-  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: var(--txt); margin-bottom: 8px; }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--txt); margin-bottom: 8px; }
   .footer-logo span { color: var(--acc); }
   .footer-tagline { font-size: 14px; margin-bottom: 20px; }
   .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
@@ -221,13 +228,13 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);line
 
 <nav>
   <div class="nav-inner">
-    <a href="/" class="nav-logo">Himangshu<span>.in</span></a>
+    <a href="index.html" class="nav-logo">Himangshu<span>.in</span></a>
     <ul class="nav-links">
-      <li><a href="/about" class="active">About</a></li>
-      <li><a href="/travel">Travel</a></li>
-      <li><a href="/vlogs">Vlogs</a></li>
-      <li><a href="/blog">Blog</a></li>
-      <li><a href="/contact">Contact</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="travel.html">Travel</a></li>
+      <li><a href="vlogs.html">Vlogs</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
       <li><a href="https://wa.me/919999999999?text=Hi%20Himangshu!" target="_blank" rel="noopener" class="nav-cta">💬 Chat Now</a></li>
     </ul>
     <button class="menu-btn" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
@@ -235,18 +242,18 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);line
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="/" onclick="toggleMenu()">Home</a>
-  <a href="/about" onclick="toggleMenu()">About</a>
-  <a href="/travel" onclick="toggleMenu()">Travel</a>
-  <a href="/vlogs" onclick="toggleMenu()">Vlogs</a>
-  <a href="/blog" onclick="toggleMenu()">Blog</a>
-  <a href="/contact" onclick="toggleMenu()">Contact</a>
+  <a href="index.html" onclick="toggleMenu()">Home</a>
+  <a href="about.html" onclick="toggleMenu()">About</a>
+  <a href="travel.html" onclick="toggleMenu()">Travel</a>
+  <a href="vlogs.html" onclick="toggleMenu()">Vlogs</a>
+  <a href="blog.html" onclick="toggleMenu()">Blog</a>
+  <a href="contact.html" onclick="toggleMenu()">Contact</a>
   <a href="https://wa.me/919999999999" target="_blank" rel="noopener" onclick="toggleMenu()" style="color:#25D366; border-bottom:none;">💬 WhatsApp Chat</a>
 </div>
 
 <div class="page-hero">
   <div class="page-hero-inner">
-    <p class="breadcrumb"><a href="/">Home</a> → About</p>
+    <p class="breadcrumb"><a href="index.html">Home</a> → About</p>
     <p class="section-label">My Story</p>
     <h1>The Best Blogger in Assam,<br>from Guwahati with love.</h1>
     <p>Hi, I'm Himangshu Kalita — Assamese content creator, travel storyteller & minimalist vlogger exploring the heart of Northeast India.</p>
@@ -291,7 +298,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);line
                 <svg viewBox="0 0 24 24" fill="#FF0000"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                 YouTube · Mini Vlogs
               </a>
-              <a href="/contact" class="sidebar-link">
+              <a href="contact.html" class="sidebar-link">
                 <svg viewBox="0 0 24 24" fill="none" stroke="var(--gld)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                 Contact / Collaborate
               </a>
@@ -320,7 +327,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);line
 
         <h2>Collaborate With Me 🤝</h2>
         <p>I'm actively open to <strong>brand partnerships, tourism campaigns, hotel & resort features, product reviews, and sponsored content</strong> across Instagram, YouTube, and this blog. My audience is made up of travel enthusiasts, Northeast India explorers, and people who love genuine storytelling — exactly who you want to reach.</p>
-        <p>Whether you're a boutique homestay in Meghalaya or a national travel brand looking for regional reach — let's create something together. <a href="/contact" style="color:var(--acc); font-weight:600;">Get in touch →</a></p>
+        <p>Whether you're a boutique homestay in Meghalaya or a national travel brand looking for regional reach — let's create something together. <a href="contact.html" style="color:var(--acc); font-weight:600;">Get in touch →</a></p>
       </div>
     </div>
   </div>
@@ -437,7 +444,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);line
       <p>Open to brand collabs, tourism campaigns, travel writing projects & more. Chat with me directly on WhatsApp or send an email.</p>
       <div class="cta-buttons">
         <a href="https://wa.me/919999999999?text=Hi%20Himangshu!%20I'd%20love%20to%20collaborate." target="_blank" rel="noopener" class="btn-white">💬 Chat on WhatsApp</a>
-        <a href="/contact" class="btn-outline-white">✉️ Full Contact Page</a>
+        <a href="contact.html" class="btn-outline-white">✉️ Full Contact Page</a>
       </div>
     </div>
   </div>
@@ -448,12 +455,12 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);line
     <div class="footer-logo">Himangshu<span>.in</span></div>
     <p class="footer-tagline">Best Blogger in Assam · Top Vlogger · Assamese Content Creator · Guwahati</p>
     <div class="footer-links">
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-      <a href="/travel">Travel</a>
-      <a href="/vlogs">Vlogs</a>
-      <a href="/blog">Blog</a>
-      <a href="/contact">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="travel.html">Travel</a>
+      <a href="vlogs.html">Vlogs</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
       <a href="https://www.instagram.com/himangshu.in" target="_blank" rel="noopener">Instagram</a>
       <a href="https://www.youtube.com/@himangshu" target="_blank" rel="noopener">YouTube</a>
     </div>
