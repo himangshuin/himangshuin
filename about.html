@@ -52,7 +52,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700;1,9..144,900&family=Outfit:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
 
 <style>
   
@@ -75,13 +75,13 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 700px 500px at 0% 0%,rgba(249,115,22,.07),transparent),radial-gradient(ellipse 600px 400px at 100% 100%,rgba(14,165,233,.05),transparent);pointer-events:none;z-index:0;}
-body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;overflow-x:hidden;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--txt);line-height:1.7;font-size:16.5px;overflow-x:hidden;}
 
 
   /* NAV */
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,251,245,0.95); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--bdr); padding: 0 24px; }
   .nav-inner { max-width: 1100px; margin: 0 auto; height: 64px; display: flex; align-items: center; justify-content: space-between; }
-  .nav-logo { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--txt); text-decoration: none; letter-spacing: -0.3px; }
+  .nav-logo { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 700; color: var(--txt); text-decoration: none; letter-spacing: -0.3px; }
   .nav-logo span { color: var(--acc); }
   .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
   .nav-links a { font-size: 14px; font-weight: 500; color: var(--txt2); text-decoration: none; letter-spacing: 0.3px; transition: color 0.2s; }
@@ -99,14 +99,14 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
   .breadcrumb { font-size: 13px; color: var(--txt3); margin-bottom: 20px; }
   .breadcrumb a { color: var(--acc); text-decoration: none; }
   .page-hero-inner .section-label { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--acc); margin-bottom: 12px; }
-  .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 5vw, 56px); font-weight: 700; color: var(--txt); line-height: 1.1; letter-spacing: -1px; margin-bottom: 16px; }
+  .page-hero h1 { font-family: 'Fraunces', serif; font-size: clamp(32px, 5vw, 56px); font-weight: 700; color: var(--txt); line-height: 1.1; letter-spacing: -1px; margin-bottom: 16px; }
   .page-hero p { font-size: 17px; color: var(--txt2); max-width: 600px; line-height: 1.7; }
 
   /* SECTIONS */
   section { padding: 80px 24px; }
   .section-inner { max-width: 1100px; margin: 0 auto; }
   .section-label { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--acc); margin-bottom: 12px; }
-  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 44px); font-weight: 700; color: var(--txt); line-height: 1.15; letter-spacing: -0.5px; margin-bottom: 16px; }
+  .section-title { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 44px); font-weight: 700; color: var(--txt); line-height: 1.15; letter-spacing: -0.5px; margin-bottom: 16px; }
   .section-desc { font-size: 16px; color: var(--txt2); max-width: 580px; line-height: 1.7; }
 
   /* ABOUT GRID */
@@ -119,17 +119,17 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
   .avatar-wrap { position: relative; width: 110px; height: 110px; margin: 0 auto 20px; }
   .avatar-ring { position: absolute; inset: -4px; border-radius: 50%; background: linear-gradient(135deg, var(--acc), var(--gld), var(--tel)); animation: spin 8s linear infinite; }
   @keyframes spin { to { transform: rotate(360deg); } }
-  .avatar-inner { position: relative; z-index: 1; width: 110px; height: 110px; border-radius: 50%; background: var(--adim); border: 4px solid white; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 700; color: var(--acc); overflow: hidden; }
+  .avatar-inner { position: relative; z-index: 1; width: 110px; height: 110px; border-radius: 50%; background: var(--adim); border: 4px solid white; display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', serif; font-size: 38px; font-weight: 700; color: var(--acc); overflow: hidden; }
   .avatar-inner img { width: 100%; height: 100%; object-fit: cover; }
   .avatar-dot { position: absolute; bottom: 4px; right: 4px; width: 16px; height: 16px; background: #25D366; border-radius: 50%; border: 3px solid white; z-index: 2; animation: pulse 2s infinite; }
   @keyframes pulse { 0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102,0.4); } 50% { transform: scale(1.1); box-shadow: 0 0 0 8px rgba(37,211,102,0); } }
-  .profile-name { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; text-align: center; color: var(--txt); margin-bottom: 4px; }
+  .profile-name { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 700; text-align: center; color: var(--txt); margin-bottom: 4px; }
   .profile-handle { text-align: center; font-size: 13px; color: var(--txt3); margin-bottom: 8px; font-weight: 500; }
   .profile-location { text-align: center; font-size: 13px; color: var(--txt2); margin-bottom: 20px; }
   .stats-row { display: flex; border: 1px solid var(--bdr); border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 20px; }
   .stat-item { flex: 1; text-align: center; padding: 14px 8px; border-right: 1px solid var(--bdr); }
   .stat-item:last-child { border-right: none; }
-  .stat-num { display: block; font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--txt); }
+  .stat-num { display: block; font-family: 'Fraunces', serif; font-size: 20px; font-weight: 700; color: var(--txt); }
   .stat-label { font-size: 10px; color: var(--txt3); font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
   .sidebar-links { display: flex; flex-direction: column; gap: 10px; }
   .sidebar-link { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-radius: var(--radius-sm); background: var(--bg); color: var(--txt); text-decoration: none; font-weight: 500; font-size: 14px; transition: all 0.2s; border: 1px solid var(--bdr); }
@@ -137,12 +137,12 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
   .sidebar-link svg { width: 18px; height: 18px; flex-shrink: 0; }
 
   /* STORY */
-  .story-content h2 { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; color: var(--txt); margin-bottom: 16px; margin-top: 40px; letter-spacing: -0.5px; }
+  .story-content h2 { font-family: 'Fraunces', serif; font-size: 32px; font-weight: 700; color: var(--txt); margin-bottom: 16px; margin-top: 40px; letter-spacing: -0.5px; }
   .story-content h2:first-child { margin-top: 0; }
   .story-content p { font-size: 16px; color: var(--txt2); line-height: 1.85; margin-bottom: 18px; }
   .story-content strong { color: var(--txt); font-weight: 600; }
   .story-quote { background: var(--adim); border-left: 4px solid var(--acc); padding: 24px 28px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; margin: 32px 0; }
-  .story-quote p { font-family: 'Playfair Display', serif; font-size: 20px; font-style: italic; color: var(--txt); line-height: 1.5; margin-bottom: 8px; }
+  .story-quote p { font-family: 'Fraunces', serif; font-size: 20px; font-style: italic; color: var(--txt); line-height: 1.5; margin-bottom: 8px; }
   .story-quote cite { font-size: 13px; color: var(--txt3); font-weight: 600; }
 
   /* TIMELINE */
@@ -152,7 +152,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
   .timeline-item { position: relative; margin-bottom: 40px; }
   .timeline-item::before { content: ''; position: absolute; left: -26px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--acc); border: 3px solid white; box-shadow: 0 0 0 2px var(--acc); }
   .timeline-year { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--acc); margin-bottom: 6px; }
-  .timeline-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--txt); margin-bottom: 8px; }
+  .timeline-title { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 700; color: var(--txt); margin-bottom: 8px; }
   .timeline-body { font-size: 15px; color: var(--txt2); line-height: 1.7; }
 
   /* SKILLS */
@@ -161,15 +161,15 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
   .skill-card { background: var(--bg1); border-radius: var(--radius-md); padding: 24px; border: 1px solid var(--bdr); box-shadow: var(--shadow-sm); transition: all 0.25s; }
   .skill-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
   .skill-icon { font-size: 32px; margin-bottom: 14px; }
-  .skill-name { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--txt); margin-bottom: 8px; }
+  .skill-name { font-family: 'Fraunces', serif; font-size: 18px; font-weight: 700; color: var(--txt); margin-bottom: 8px; }
   .skill-desc { font-size: 14px; color: var(--txt2); line-height: 1.6; }
 
   /* VALUES */
   .values-section { background: var(--bg1); }
   .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 48px; }
   .value-card { padding: 28px; border-radius: var(--radius-md); border: 1px solid var(--bdr); background: var(--bg); }
-  .value-num { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 700; color: rgba(200,101,26,0.15); line-height: 1; margin-bottom: 10px; }
-  .value-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--txt); margin-bottom: 10px; }
+  .value-num { font-family: 'Fraunces', serif; font-size: 40px; font-weight: 700; color: rgba(200,101,26,0.15); line-height: 1; margin-bottom: 10px; }
+  .value-title { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 700; color: var(--txt); margin-bottom: 10px; }
   .value-body { font-size: 14px; color: var(--txt2); line-height: 1.75; }
 
   /* CTA */
@@ -177,7 +177,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
   .cta-card { background: var(--txt); border-radius: var(--radius-xl); padding: 60px; text-align: center; color: var(--txt); position: relative; overflow: hidden; }
   .cta-card::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 50%, rgba(200,101,26,0.3), transparent 60%), radial-gradient(ellipse at 70% 50%, rgba(26,122,106,0.2), transparent 60%); }
   .cta-card * { position: relative; z-index: 1; }
-  .cta-card h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 44px); font-weight: 700; color: var(--txt); margin-bottom: 16px; }
+  .cta-card h2 { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 44px); font-weight: 700; color: var(--txt); margin-bottom: 16px; }
   .cta-card p { font-size: 17px; color: rgba(255,255,255,0.75); max-width: 500px; margin: 0 auto 36px; line-height: 1.7; }
   .cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
   .btn-white { display: inline-flex; align-items: center; gap: 8px; background: var(--bg1); color: var(--txt); padding: 14px 28px; border-radius: 50px; font-weight: 600; font-size: 15px; text-decoration: none; transition: all 0.25s; }
@@ -188,7 +188,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
   /* FOOTER */
   footer { background: var(--txt); color: rgba(255,255,255,0.6); padding: 40px 24px; text-align: center; }
   .footer-inner { max-width: 1100px; margin: 0 auto; }
-  .footer-logo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--txt); margin-bottom: 8px; }
+  .footer-logo { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 700; color: var(--txt); margin-bottom: 8px; }
   .footer-logo span { color: var(--acc); }
   .footer-tagline { font-size: 14px; margin-bottom: 20px; }
   .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
