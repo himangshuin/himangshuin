@@ -141,7 +141,7 @@ body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--txt);line-
   .btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.2);}
   .btn-outline-white{display:inline-flex;align-items:center;gap:8px;background:transparent;color:white;padding:13px 26px;border-radius:50px;font-weight:600;font-size:14px;text-decoration:none;border:2px solid rgba(255,255,255,0.35);transition:all 0.25s;}
   .btn-outline-white:hover{background:rgba(255,255,255,0.12);border-color:white;}
-  footer{background:var(--txt);color:var(--txt2);padding:40px 24px;text-align:center;}
+  footer{background:linear-gradient(180deg,#1a1008,#0d0804);color:rgba(255,255,255,0.55);padding:40px 24px;text-align:center;}
   .footer-inner{max-width:1100px;margin:0 auto;}
   .footer-logo{font-family:'Fraunces',serif;font-size:22px;font-weight:700;color:white;margin-bottom:8px;}
   .footer-logo span{color:var(--acc);}
@@ -168,6 +168,31 @@ body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--txt);line-
 .fu{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease;}
 .fu.in{opacity:1;transform:none;}
 
+</style>
+<style>
+/* ===== REDESIGN v6 ENHANCEMENT — Vivid Gradients + Deep Shadows ===== */
+:root{--sh-card:0 4px 24px rgba(0,0,0,.07),0 1px 4px rgba(0,0,0,.04);--sh-hover:0 16px 48px rgba(249,115,22,.16),0 4px 16px rgba(0,0,0,.08);}
+/* Animated background secondary layer */
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(ellipse 600px 500px at 0% 100%,rgba(22,163,74,.06),transparent),radial-gradient(ellipse 500px 400px at 100% 0%,rgba(124,58,237,.07),transparent);
+  animation:bgShift 18s ease-in-out infinite alternate;}
+@keyframes bgShift{0%{opacity:.5}100%{opacity:1}}
+/* Card hover shadows */
+.skill-card:hover,.value-card:hover,.why-card:hover{box-shadow:0 16px 48px rgba(249,115,22,.14),0 4px 16px rgba(0,0,0,.07)!important;transform:translateY(-4px)!important;}
+.vlog-card:hover,.bcard:hover,.lcard:hover,.acard:hover,.timeline-item:hover{box-shadow:0 20px 60px rgba(249,115,22,.18),0 6px 18px rgba(0,0,0,.08)!important;}
+/* Section labels vivid */
+.section-label,.sec-label{font-weight:700!important;letter-spacing:2.5px!important;}
+/* Footer top rainbow bar */
+footer{position:relative;}
+footer::before{content:"";display:block;height:4px;background:linear-gradient(90deg,#f97316,#0ea5e9,#7c3aed,#16a34a,#e11d48,#ca8a04);margin-bottom:36px;}
+/* WhatsApp float */
+.wa-float,.wafl{position:fixed!important;bottom:28px!important;right:28px!important;z-index:200!important;}
+/* Page hero base gradient */
+.page-hero{background:linear-gradient(160deg,#fffbf5 0%,#fff4e6 35%,#fdf6fb 70%,#f0f9ff 100%)!important;}
+/* Animate skill/value cards */
+.skill-card,.value-card,.why-card,.sidebar-link{transition:all .3s!important;}
+/* Timeline dots glow */
+.timeline-item::before{box-shadow:0 0 0 4px rgba(249,115,22,.2)!important;}
 </style>
 </head>
 <body>
