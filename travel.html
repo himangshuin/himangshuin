@@ -135,7 +135,7 @@ body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--txt);line-
   .cta-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(200,101,26,0.3),transparent 60%),radial-gradient(ellipse at 70% 50%,rgba(26,122,106,0.2),transparent 60%);}
   .cta-banner *{position:relative;z-index:1;}
   .cta-banner h2{font-family:'Fraunces',serif;font-size:clamp(24px,4vw,40px);font-weight:700;color:white;margin-bottom:14px;}
-  .cta-banner p{font-size:16px;color:var(--txt2);max-width:480px;margin:0 auto 32px;line-height:1.7;}
+  .cta-banner p{font-size:16px;color:rgba(255,255,255,0.78);max-width:480px;margin:0 auto 32px;line-height:1.7;}
   .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
   .btn-white{display:inline-flex;align-items:center;gap:8px;background:var(--bg1);color:var(--txt);padding:13px 26px;border-radius:50px;font-weight:600;font-size:14px;text-decoration:none;transition:all 0.25s;}
   .btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.2);}
@@ -165,8 +165,7 @@ body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--txt);line-
     .cta-banner{padding:40px 24px;}
   }
 
-.fu{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease;}
-.fu.in{opacity:1;transform:none;}
+@keyframes cardReveal{from{opacity:0;transform:translateY(20px) scale(.97)}to{opacity:1;transform:none}}
 
 </style>
 <style>
@@ -178,8 +177,9 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
   animation:bgShift 18s ease-in-out infinite alternate;}
 @keyframes bgShift{0%{opacity:.5}100%{opacity:1}}
 /* Card hover shadows */
-.skill-card:hover,.value-card:hover,.why-card:hover{box-shadow:0 16px 48px rgba(249,115,22,.14),0 4px 16px rgba(0,0,0,.07)!important;transform:translateY(-4px)!important;}
-.vlog-card:hover,.bcard:hover,.lcard:hover,.acard:hover,.timeline-item:hover{box-shadow:0 20px 60px rgba(249,115,22,.18),0 6px 18px rgba(0,0,0,.08)!important;}
+.guide-card:hover{box-shadow:0 20px 60px rgba(249,115,22,.18),0 6px 18px rgba(0,0,0,.08)!important;transform:translateY(-6px)!important;}
+.state-card:hover{box-shadow:0 12px 36px rgba(249,115,22,.15)!important;}
+.tip-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(249,115,22,.12)!important;transition:all .3s;}
 /* Section labels vivid */
 .section-label,.sec-label{font-weight:700!important;letter-spacing:2.5px!important;}
 /* Footer top rainbow bar */
@@ -187,12 +187,49 @@ footer{position:relative;}
 footer::before{content:"";display:block;height:4px;background:linear-gradient(90deg,#f97316,#0ea5e9,#7c3aed,#16a34a,#e11d48,#ca8a04);margin-bottom:36px;}
 /* WhatsApp float */
 .wa-float,.wafl{position:fixed!important;bottom:28px!important;right:28px!important;z-index:200!important;}
-/* Page hero base gradient */
-.page-hero{background:linear-gradient(160deg,#fffbf5 0%,#fff4e6 35%,#fdf6fb 70%,#f0f9ff 100%)!important;}
 /* Animate skill/value cards */
 .skill-card,.value-card,.why-card,.sidebar-link{transition:all .3s!important;}
 /* Timeline dots glow */
 .timeline-item::before{box-shadow:0 0 0 4px rgba(249,115,22,.2)!important;}
+
+/* ===== ENHANCED ANIMATIONS ===== */
+/* Hero entrance */
+.page-hero-inner{animation:heroEnter .9s cubic-bezier(.16,1,.3,1) both;}
+@keyframes heroEnter{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:none}}
+/* Stagger hero children */
+.page-hero-inner .breadcrumb{animation:fadeSlide .6s .1s both;}
+.page-hero-inner .section-label{animation:fadeSlide .6s .2s both;}
+.page-hero-inner h1{animation:fadeSlide .7s .3s both;}
+.page-hero-inner p{animation:fadeSlide .6s .45s both;}
+.page-hero-inner .hero-filters{animation:fadeSlide .6s .6s both;}
+@keyframes fadeSlide{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+/* Filter btn active bounce */
+.filter-btn.active{animation:btnPop .25s cubic-bezier(.36,.07,.19,.97);}
+@keyframes btnPop{0%{transform:scale(1)}50%{transform:scale(1.08)}100%{transform:scale(1)}}
+/* Featured card shimmer on hover */
+.featured-card{transition:all .35s cubic-bezier(.34,1.56,.64,1)!important;}
+.featured-card:hover{transform:translateY(-8px) scale(1.01)!important;}
+/* Guide cards staggered fade with spring */
+.guide-card{transition:all .3s cubic-bezier(.34,1.56,.64,1)!important;}
+/* State card hover spring */
+.state-card{transition:all .3s cubic-bezier(.34,1.56,.64,1)!important;}
+.state-card:hover{transform:translateY(-5px) scale(1.03)!important;}
+/* Tip card */
+.tip-card{transition:all .3s ease!important;}
+/* WhatsApp pulse */
+.wa-btn{animation:waPulse 2.5s infinite;}
+@keyframes waPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4);}50%{box-shadow:0 4px 32px rgba(37,211,102,.75),0 0 0 8px rgba(37,211,102,.1);}}
+/* Smooth filter transitions on cards */
+.guide-card{transition:opacity .3s ease,transform .3s cubic-bezier(.34,1.56,.64,1),box-shadow .3s ease!important;}
+/* Nav scroll shrink */
+nav.scrolled{padding:0 24px;box-shadow:0 2px 20px rgba(0,0,0,.08);}
+/* Section entrance — overriding basic fade-in for smoother feel */
+.fade-in{opacity:0;transform:translateY(28px) scale(.98);transition:opacity .65s cubic-bezier(.16,1,.3,1),transform .65s cubic-bezier(.16,1,.3,1)!important;}
+.fade-in.visible{opacity:1;transform:none!important;}
+/* CTA banner text glow */
+.cta-banner h2{text-shadow:0 0 40px rgba(249,115,22,.3);}
+/* Btn hover lift */
+.btn-accent:hover,.btn-white:hover,.btn-outline-white:hover{transform:translateY(-3px)!important;}
 </style>
 </head>
 <body>
@@ -401,14 +438,24 @@ footer::before{content:"";display:block;height:4px;background:linear-gradient(90
   function filterGuides(cat,btn){
     document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
     btn.classList.add('active');
-    document.querySelectorAll('.guide-card').forEach(c=>{
-      if(cat==='all'||c.dataset.cat===cat){c.style.display='flex';}else{c.style.display='none';}
+    document.querySelectorAll('.guide-card').forEach((c,i)=>{
+      if(cat==='all'||c.dataset.cat===cat){
+        c.style.display='flex';
+        c.style.animation='none';
+        setTimeout(()=>{c.style.animation=`cardReveal .4s ${i*0.04}s cubic-bezier(.16,1,.3,1) both`;},10);
+      }else{c.style.display='none';}
     });
   }
+  // Intersection observer with stagger
   const observer=new IntersectionObserver((entries)=>{
-    entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*60);observer.unobserve(e.target);}});
-  },{threshold:0.08});
+    entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*70);observer.unobserve(e.target);}});
+  },{threshold:0.06});
   document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+  // Nav scroll shrink
+  window.addEventListener('scroll',()=>{
+    document.querySelector('nav').classList.toggle('scrolled',scrollY>60);
+  },{passive:true});
+
 </script>
 
 <script>
