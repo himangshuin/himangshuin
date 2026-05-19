@@ -217,9 +217,6 @@ body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--txt);line-
     .cta-card { padding: 40px 24px; }
   }
 
-.fu{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease;}
-.fu.in{opacity:1;transform:none;}
-
 </style>
 <style>
 /* ===== REDESIGN v6 ENHANCEMENT — Vivid Gradients + Deep Shadows ===== */
@@ -230,8 +227,8 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
   animation:bgShift 18s ease-in-out infinite alternate;}
 @keyframes bgShift{0%{opacity:.5}100%{opacity:1}}
 /* Card hover shadows */
-.skill-card:hover,.value-card:hover,.why-card:hover{box-shadow:0 16px 48px rgba(249,115,22,.14),0 4px 16px rgba(0,0,0,.07)!important;transform:translateY(-4px)!important;}
-.vlog-card:hover,.bcard:hover,.lcard:hover,.acard:hover,.timeline-item:hover{box-shadow:0 20px 60px rgba(249,115,22,.18),0 6px 18px rgba(0,0,0,.08)!important;}
+.vlog-card:hover{box-shadow:0 20px 60px rgba(249,115,22,.18),0 6px 18px rgba(0,0,0,.08)!important;}
+.why-card:hover{box-shadow:0 16px 48px rgba(249,115,22,.14),0 4px 16px rgba(0,0,0,.07)!important;transform:translateY(-4px)!important;}
 /* Section labels vivid */
 .section-label,.sec-label{font-weight:700!important;letter-spacing:2.5px!important;}
 /* Footer top rainbow bar */
@@ -239,12 +236,61 @@ footer{position:relative;}
 footer::before{content:"";display:block;height:4px;background:linear-gradient(90deg,#f97316,#0ea5e9,#7c3aed,#16a34a,#e11d48,#ca8a04);margin-bottom:36px;}
 /* WhatsApp float */
 .wa-float,.wafl{position:fixed!important;bottom:28px!important;right:28px!important;z-index:200!important;}
-/* Page hero base gradient */
-.page-hero{background:linear-gradient(160deg,#fffbf5 0%,#fff4e6 35%,#fdf6fb 70%,#f0f9ff 100%)!important;}
-/* Animate skill/value cards */
+/* DO NOT override .page-hero here — vlogs hero is intentionally dark */
+/* Animate cards */
 .skill-card,.value-card,.why-card,.sidebar-link{transition:all .3s!important;}
-/* Timeline dots glow */
-.timeline-item::before{box-shadow:0 0 0 4px rgba(249,115,22,.2)!important;}
+
+/* ===== VISIBILITY FIXES ===== */
+/* Ensure dark hero text stays white */
+.page-hero{background:var(--txt)!important;}
+.page-hero .breadcrumb{color:rgba(255,255,255,0.55)!important;}
+.page-hero h1{color:white!important;}
+.page-hero p{color:rgba(255,255,255,0.82)!important;}
+.page-hero .section-label{color:var(--acc)!important;}
+
+/* ===== ENHANCED ANIMATIONS ===== */
+/* Hero entrance with stagger */
+.page-hero-inner .breadcrumb{animation:fadeSlide .6s .05s both;}
+.page-hero-inner .section-label{animation:fadeSlide .6s .15s both;}
+.page-hero-inner h1{animation:fadeSlide .8s .25s cubic-bezier(.16,1,.3,1) both;}
+.page-hero-inner p{animation:fadeSlide .6s .4s both;}
+.page-hero-inner .hero-actions{animation:fadeSlide .6s .55s both;}
+@keyframes fadeSlide{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+/* Big watermark text float */
+.hero-bg-text{animation:floatBg 8s ease-in-out infinite alternate;}
+@keyframes floatBg{from{transform:translateY(-50%) translateX(0)}to{transform:translateY(-52%) translateX(-8px)}}
+/* Vlog card spring hover */
+.vlog-card{transition:all .3s cubic-bezier(.34,1.56,.64,1)!important;}
+.vlog-card:hover{transform:translateY(-7px) scale(1.01)!important;}
+/* Reel card hover */
+.reel-card{transition:all .3s cubic-bezier(.34,1.56,.64,1)!important;}
+.reel-card:hover{transform:translateY(-5px) scale(1.03)!important;}
+/* Why cards */
+.why-card{transition:all .3s cubic-bezier(.34,1.56,.64,1)!important;}
+/* Featured vlog thumb pulse on hover */
+.featured-vlog-thumb{transition:transform .4s cubic-bezier(.34,1.56,.64,1)!important;}
+.featured-vlog-thumb:hover{transform:scale(1.02)!important;}
+/* Play overlay fade */
+.play-overlay{transition:opacity .25s ease!important;}
+/* Section fade-in improved */
+.fade-in{opacity:0;transform:translateY(28px) scale(.98);transition:opacity .65s cubic-bezier(.16,1,.3,1),transform .65s cubic-bezier(.16,1,.3,1)!important;}
+.fade-in.visible{opacity:1;transform:none!important;}
+/* WhatsApp pulse glow */
+.wa-btn{animation:waPulse 2.5s infinite;}
+@keyframes waPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4);}50%{box-shadow:0 4px 32px rgba(37,211,102,.75),0 0 0 8px rgba(37,211,102,.1);}}
+/* CTA card heading glow */
+.cta-card h2{text-shadow:0 0 40px rgba(249,115,22,.35);}
+/* Button hover lifts */
+.btn-yt:hover{transform:translateY(-3px)!important;box-shadow:0 8px 24px rgba(255,0,0,.35)!important;}
+.btn-white:hover{transform:translateY(-3px)!important;}
+.btn-primary:hover{transform:translateY(-3px)!important;}
+/* Nav scroll shrink */
+nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08);}
+/* Section entrance pulse for reels */
+@keyframes reelEntrance{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:none}}
+/* Scroll indicator shimmer */
+.reels-scroll::after{content:'';position:absolute;right:0;top:0;bottom:0;width:60px;background:linear-gradient(90deg,transparent,var(--bg1));pointer-events:none;}
+.reels-section .section-inner{position:relative;}
 </style>
 </head>
 <body>
@@ -550,8 +596,13 @@ footer::before{content:"";display:block;height:4px;background:linear-gradient(90
   function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((e, i) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 80); observer.unobserve(e.target); } });
-  }, { threshold: 0.08 });
+  }, { threshold: 0.06 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  // Nav scroll
+  window.addEventListener('scroll', () => {
+    document.querySelector('nav').classList.toggle('scrolled', scrollY > 60);
+  }, {passive:true});
+
 </script>
 
 <script>
